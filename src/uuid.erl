@@ -45,6 +45,10 @@
 -module(uuid).
 -author('Per Andersson').
 
+%% Ignore the deprecation warning for crypto:md5/1 and crypto:sha/1.
+%% @todo Remove when supporting only R16B+.
+-compile(nowarn_deprecated_function).
+
 -include("uuid.hrl").
 
 -export([get_node/0,
